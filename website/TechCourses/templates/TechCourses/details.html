@@ -1,0 +1,10 @@
+{% if course.pk is 2 %}
+<h1><a href="https://www.edureka.co/blog/category/artificial-intelligence/">{{course.coursename}}</a></h1>
+<h2>{{course.instructorname}}</h2>
+{% elif course.pk is 3 %}
+<h1><a href="https://www.edureka.co/blog/knowledge-representation-in-ai/">{{course.coursename}}</a></h1>
+<h2>{{course.instructorname}}</h2>
+{% else %}
+<h1><a href="https://www.edureka.co/blog/format-function-in-python/">{{course.coursename}}</a></h1>
+<h2>{{course.instructorname}}</h2>
+{% endif%}

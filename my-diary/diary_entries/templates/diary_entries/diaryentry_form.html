@@ -1,0 +1,20 @@
+{% extends "diary_entries/base.html" %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save">
+</form>
+{% if diaryentry %}
+    <a href="{% url 'diaryentry-detail' diaryentry.id %}">
+        <button>Cancel</button>
+    </a>
+{% else %}
+    <a href="{% url 'diaryentry-list' %}">
+        <button>Cancel</button>
+    </a>
+
+    {% endif %}
+{% endblock %}

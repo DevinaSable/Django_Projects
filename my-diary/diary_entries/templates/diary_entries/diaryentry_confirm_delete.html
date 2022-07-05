@@ -1,0 +1,17 @@
+{% extends "diary_entries/base.html" %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <p>
+        Are you sure you want to delete
+        <em>{{ diaryentry.title }}</em>
+        created on {{ diaryentry.date_created|date:'d-m-Y' }}?
+    </p>
+    <input type="submit", value="Confirm">
+</form>
+<a href="{% url 'diaryentry-detail' diaryentry.id %}">
+    <button>Cancel</button>
+</a>
+{% endblock %}
