@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+</head>
+<body><div>
+<h4>Type text to translate..</h4>
+<form method="post">
+  {% csrf_token %}
+  <h5>Text:
+  <input type="text" name="translate" required></h5>
+  <h5>Select Language:</h5>
+  <select required name="language">
+    <option value="Hindi">Hindi</option>
+    <option value="Marathi">Marathi</option>
+    <option value="Tamil">Tamil</option>
+    <option value="Spanish">Spanish</option>
+  </select>
+<br>
+  <button type="submit">Translate</button>
+</form></div>
+<div>
+{% if translation  %}
+  <p>Meaning of <strong>{{ text }}  : {{ translation }}</strong></p>
+  {% endif %}</div>
+</body>
+</html>
